@@ -1,0 +1,121 @@
+/* Importa a fonte pixel */
+@font-face {
+  font-family: 'Pixel';
+  src: url('fonts/pixel.ttf') format('truetype');
+}
+/* Reset básico para garantir que o site fique igual em todos os navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Estilo do body (fundo e centralização) */
+body {
+  height: 100vh;
+  background-color: #ee96dc;
+  font-family: 'Pixel', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+/* Estilo da carta */
+.carta {
+  background-color: #f8a8c5;
+  border: 8px solid #000000;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  box-shadow: 0 8px 0 #000, 0 8px 0 8px #f8a8c5, 0 16px 0 #000;
+  animation: flutuar 3s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* Texto dentro da carta */
+.carta p {
+  font-size: 12px;
+  color: #000;
+  word-break: break-word;
+}
+p {
+  text-align: center;
+}
+/* Estilo dos botões */
+.botoes {
+  margin-top: 30px;
+}
+.hidden {
+  display: none;
+}
+.botoes button {
+  background-color: #ffcccc;
+  border: 4px solid #000;
+  padding: 10px 20px;
+  margin: 10px;
+  font-family: 'Pixel', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+/* Caixa de poema que aparece por cima da página */
+#poema {
+  background-color: #ffe0e0;
+  border: 8px solid #000;
+  width: 300px;
+  padding: 20px;
+  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Pixel', sans-serif;
+  box-shadow: 0 8px 0 #000, 0 8px 0 8px #ffe0e0, 0 16px 0 #000;
+  z-index: 10;
+}
+/* Estilo do texto do poema */
+.poema-texto p {
+  font-size: 12px;
+  text-align: center;
+  color: #000;
+}
+/* Gatinho em cima da caixinha */
+#gatinho {
+  width: 80px;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Estilo do botão voltar */
+#btn-voltar {
+  font-family: 'Pixel', sans-serif;
+  background-color: #ff9999;
+  border: 2px solid #000;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+/* Estrela confete */
+.confete {
+  width: 10px;
+  height: 10px;
+  background-color: hsl(calc(360 * var(--i)), 70%, 60%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 65%, 79% 100%, 50% 80%, 21% 100%, 32% 65%, 2% 35%, 39% 35%);
+  position: absolute;
+  animation: cair 3s ease-in forwards;
+  border: 2px solid #000;
+}
+@keyframes cair {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+  
