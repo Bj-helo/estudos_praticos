@@ -1,4 +1,4 @@
-// Texto que vai ser escrito na carta
+// Texto da carta
 const textoCompleto = `Bea, queria me desculpar por não ter ido te visitar todo esse tempo que está afastada e em um momento sensível. Mas, tentei fazer isso e escrever essas coisas a fim de reafirmar meu carinho e amor por você. Bea, você é especial demais e uma pessoa apaixonante. Estou com muitas coisas ultimamente, porém te amo e espero que se recupere o mais brevemente possível.\nCom carinho, Helo.`;
 
 // Onde o texto será mostrado
@@ -10,7 +10,7 @@ const poema = document.getElementById('poema');
 const btnVoltar = document.getElementById('btn-voltar');
 let index = 0;
 
-// Função que escreve o texto letra por letra
+// Função de escrever
 function escreverTexto() {
   if (index < textoCompleto.length) {
     textoElemento.innerHTML += textoCompleto.charAt(index);
@@ -22,10 +22,10 @@ function escreverTexto() {
   }
 }
 
-// Começa a escrever quando abrir a página
+// ´Para quando abrir a pagina, escrever
 window.onload = escreverTexto;
 
-// Quando clicar no "Sim"
+// Quando clicar no botao sim
 if (btnSim) {
   btnSim.addEventListener('click', () => {
     if (botoes) botoes.classList.add('hidden');
@@ -33,21 +33,11 @@ if (btnSim) {
     criarConfetes(); // Explosão de confetes
   });
 }
-// Função para escrever o texto da caixinha de poema
-const textoPoema = "Amizade é sobre estar junto até mesmo quando estamos longe. 💖 Obrigada por ser essa pessoa tão incrível!";
-const textoPoemaElemento = document.getElementById('texto-poema');
-let indexPoema = 0;
-function escreverPoema() {
-  if (indexPoema < textoPoema.length) {
-    textoPoemaElemento.innerHTML += textoPoema.charAt(indexPoema);
-    indexPoema++;
-    setTimeout(escreverPoema, 50); // velocidade de digitação
-  }
-}
-// Quando passar o mouse ou clicar no "Não"
+
+// Quando passar o mouse ou clicar no botao nao
 const btnnao = document.getElementById('btn-nao');
 
-// Função para fazer o botão "fugir"
+// Função para fazer o botão fugir
 function fugirBotaoNao() {
   const maxX = window.innerWidth - btnNao.offsetWidth;
   const maxY = window.innerHeight - btnNao.offsetHeight;
@@ -64,8 +54,7 @@ btnNao.addEventListener('mouseover', fugirBotaoNao);
 // Touchstart para mobile
 btnNao.addEventListener('touchstart', fugirBotaoNao);
 
-
-// Função para criar confetes
+// Função para criar os confetes
 function criarConfetes() {
   for (let i = 0; i < 100; i++) {
     const confete = document.createElement('div');
@@ -79,6 +68,7 @@ function criarConfetes() {
     }, 3000);
   }
 }
+
 // Adiciona o evento de clique para o botão "Voltar"
 if (btnVoltar) {
   btnVoltar.addEventListener('click', () => {
